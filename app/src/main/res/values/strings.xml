@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NY Times Books</string>
+
+    <!-- Books -->
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="title_example">Title Example</string>
+    <string name="description">Description</string>
+    <string name="description_example">Description Example</string>
+
+    <!-- Activities Titles -->
+    <string name="title_books">Books</string>
+    <string name="title_book_details">Book Details</string>
+
+    <!-- Errors -->
+    <string name="error_401">Acesso não autorizado</string>
+    <string name="unhandled_error">Erro desconhecido</string>
+    <string name="error_500">Erro catastrófico no servidor</string>
+</resources>

@@ -1,0 +1,2 @@
+rootProject.name = "NY Times Books"
+include ':app'

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.book.BooksActivity">
+
+    <include layout="@layout/include_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ViewFlipper
+        android:id="@+id/viewFlipperBooks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarMain"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- No design editor o ViewFlipper mostra somente o primeiro filho, neste caso o ProgressBar.
+             Será carregado o componente de loading para o usuário, e somente após receber o retorno da API
+             os outros componentes serão mostrados, dependendo do retorno ter sido sucesso ou falha.
+             Utilizar o ViewFlipper elimina a necessidade de controlar a visibilidade de vários objetos
+             em tempo real. -->
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBarMain"
+            tools:listitem="@layout/item_book" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/error_401"/>
+
+    </ViewFlipper>
+
+
+    <!-- Com a propriedade tools é possível simular como a tela ficará após a execução.
+         Todos os itens adicionados na propriedade tools aparecem apenas no design editor,
+         não são carregados no layout do aplicativo em execução -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
